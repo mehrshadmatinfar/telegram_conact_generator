@@ -67,7 +67,6 @@ def index():
         text = msg['message'].get('text', '')
         requests.post(url+'/sendMessage?chat_id=103694414&&text=hello')
         requests.post(url+'/sendMessage?chat_id=103694414&&text='+text)
-        requests.post(url+'/sendMessage?chat_id=103694414&&text='+type(text))
         if text[0] == '+':
             requests.post(url+'/sendContact?chat_id=103694414&phone_number='+text+'&first_name=ali')
         if text == '/start':
