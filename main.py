@@ -67,6 +67,8 @@ def index():
         text = msg['message'].get('text', '')
         if text == '/start':
             send_mess(chat_id, 'Welcome to contact generator bot')
+        elif 'new' in text:
+            send_mess(chat_id, 'hhh')
         write_json(msg, '11telegram_request.json')
         sendKirIfKoon(msg)
         return Response('ok', status=200)
