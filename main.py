@@ -63,6 +63,10 @@ def write_json(data, fileName='response.json'):
 def index():
     if request.method == 'POST':
         msg = request.get_json()
+        chat_id = get_chat_id(msg)
+        text = msg['message'].get('text', '')
+        if text == '/start':
+            send_mess(chat_id, 'Welcome to contact generator bot')
         write_json(msg, '11telegram_request.json')
         sendKirIfKoon(msg)
         return Response('ok', status=200)
