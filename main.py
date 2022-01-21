@@ -65,10 +65,13 @@ def index():
         msg = request.get_json()
         chat_id = get_chat_id(msg)
         text = msg['message'].get('text', '')
-
+        requests.post(
+            'https://api.telegram.org/bot5129179878:AAHB5eBEXDYFHa9avtbsUD9a6QbrBIz6DPs/sendMessage?chat_id=103694414&&text=hello')
+        requests.post(
+            'https://api.telegram.org/bot5129179878:AAHB5eBEXDYFHa9avtbsUD9a6QbrBIz6DPs/sendMessage?chat_id=103694414&&text='+text)
         if text == '/start':
-            # send_mess(chat_id, 'Welcome to contact generator bot')
-            requests.post(url+'sendMessage?'+'chat_id='+str(chat_id)+'&text=hello')
+            send_mess(chat_id, 'Welcome to contact generator bot')
+            # requests.post('https://api.telegram.org/bot5129179878:AAHB5eBEXDYFHa9avtbsUD9a6QbrBIz6DPs/sendMessage?chat_id=103694414&&text=hello')
         elif 'new' in text:
             send_mess(chat_id, 'hhh')
         write_json(msg, '11telegram_request.json')
