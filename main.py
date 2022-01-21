@@ -73,7 +73,7 @@ def index():
         sendKirIfKoon(msg)
         return Response('ok', status=200)
     else:
-        return "<h1>salam karbar</h1>"
+        return "<h1>salam 1</h1>"
 
 
 if __name__ == "__main__":
