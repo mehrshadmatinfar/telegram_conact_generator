@@ -9,7 +9,7 @@ from flask import Response
 import os
 
 
-url = "https://api.telegram.org/5129179878:AAHB5eBEXDYFHa9avtbsUD9a6QbrBIz6DPs"
+url = "https://api.telegram.org/bot5129179878:AAHB5eBEXDYFHa9avtbsUD9a6QbrBIz6DPs"
 
 app = Flask(__name__)
 
