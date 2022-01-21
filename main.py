@@ -65,8 +65,10 @@ def index():
         msg = request.get_json()
         chat_id = get_chat_id(msg)
         text = msg['message'].get('text', '')
+
         if text == '/start':
-            send_mess(chat_id, 'Welcome to contact generator bot')
+            # send_mess(chat_id, 'Welcome to contact generator bot')
+            requests.post(url+'sendMessage?'+'chat_id='+str(chat_id)+'&text=hello')
         elif 'new' in text:
             send_mess(chat_id, 'hhh')
         write_json(msg, '11telegram_request.json')
